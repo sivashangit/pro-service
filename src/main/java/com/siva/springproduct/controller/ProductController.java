@@ -5,6 +5,8 @@ import com.siva.springproduct.dto.ProductResponseDto;
 import com.siva.springproduct.entity.Product;
 import com.siva.springproduct.service.Productservcie;
 import org.apache.el.lang.ELArithmetic;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,9 @@ public class ProductController {
 
     @Autowired
     private Productservcie productservcie;
+
+    @Autowired
+    Logger loggerFactory = LoggerFactory.getLogger(ProductController.class);
 
     @PostMapping("/product")
     ResponseEntity<Product> createProduct(@RequestBody ProductRequestDto productRequestDto){
