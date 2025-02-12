@@ -31,6 +31,7 @@ public class ProductController {
 
         Product product= productservcie.createProduct(productRequestDto);
         return new ResponseEntity<>(product, HttpStatus.OK);
+        //some test code added
     }
 
     @GetMapping("/products")
